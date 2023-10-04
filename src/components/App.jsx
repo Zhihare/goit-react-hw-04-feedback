@@ -11,11 +11,11 @@ export default function App() {
 
 
 
-  const handlAddOption = (optionName) => {
+  const handlAddOption = optionName => {
     setOptions((prevState) => ({
       ...prevState,
       [optionName]: prevState[optionName] + 1,
-    }))
+    }));
   };
 
 
@@ -35,11 +35,11 @@ export default function App() {
       <Section title="Please leave feedback">
         <FeedbackOptions
           options={Object.keys(options)}
-          onLeaveFeedback={handlAddOption()}
+          onLeaveFeedback={handlAddOption}
         />
       </Section>
       <Section title="Statistics">
-        {countTotalFeedback > 0 ? (
+        {countTotalFeedback() > 0 ? (
           <Statistics
             good={options.good}
             neutral={options.neutral}
