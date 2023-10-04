@@ -11,7 +11,7 @@ const icons = {
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 	return (
 		<FeedbackOptionsStyle>
-			{options.map(option => {
+			{options.map((option) => {
 				const Icon = icons[option];
 				return (
 					<FeedBackOptionsSlyleButton
